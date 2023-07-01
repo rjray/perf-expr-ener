@@ -1,6 +1,5 @@
 *.o
 
 *-gcc
-*-clang
 *-llvm
 *-intel
