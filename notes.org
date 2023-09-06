@@ -1,0 +1,46 @@
+#+TITLE: Paper on Power, Efficiency, Expressiveness
+#+AUTHOR: Randy J. Ray
+#+DATE: Sep 04 2023
+:PROPERTIES:
+#+OPTIONS:
+:END:
+
+* Overview:
+** Want to keep all three metrics
+** Target 16-20 pages for the initial (journal) paper
+** 6-10 pages for a conference paper version
+** Repo: [[https://github.com/rjray/perf-expr-ener]]
+* Algorithms:
+** Keep maybe 3 of the 5 original algorithms (plus gap algorithm)
+*** Aho/Corasick
+*** Boyer/Moore
+*** Gap matching/regexp gap matching
+** Look for at least 2 newer ones to add (at least one more approximate)
+** Multi-threading/parallel algorithms?
+*** OpenMPI for C/C++
+*** Rayon for Rust?
+*** Go? Java?
+** Keep three-compiler evaluation of C/C++, but only use the best for each
+* Coding:
+** Rewrite all code to be idiomatic of each language
+** Rewrite runner to take full command-line as arguments
+** Rewrite Makefile's to accomodate this
+** Go?
+** Java?
+** Consider comparisons of Rust-Bio and SeqAn
+* Metrics:
+** Energy:
+*** Keep existing mechanisms (harness, etc.)
+*** How will a multi-thread algorithm do?
+** Performance:
+*** Again, existing harness-based mechanisms
+*** No direct comparisons between algorithms (not necessary)
+**** Possibly combining all run-time?
+**** DFA-Gap/Regexp-Gap (and any other approx match) might have to be separate
+*** Aim for similar graphs/tables
+** Expressiveness:
+*** ~sloc~ for code length, etc.
+*** ~lizard~ for complexity
+**** Need to get the bug fixed (https://github.com/terryyin/lizard/issues/363)
+**** Alternately, find a different tool that will support all 5 languages?
+*** Same approach as previously for compressibility
